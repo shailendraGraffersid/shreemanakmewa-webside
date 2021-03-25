@@ -1,0 +1,14 @@
+.qty-box .input-group .form-control {
+    width: 38px !important;
+}
+
+.img-fluid {
+    height: 350px;
+}
+@media (max-width:499px){
+    .img-fluid {
+        width: 200px !important;
+        height: 200px;
+        margin-left: 60px;
+    }
+}

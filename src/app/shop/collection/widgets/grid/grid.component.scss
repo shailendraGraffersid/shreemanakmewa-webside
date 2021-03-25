@@ -1,0 +1,34 @@
+.search-count{
+    width: 60% !important;
+}
+
+@media only screen and (max-width: 768px){
+    .search-count{
+        width: 100% !important;
+    }
+}
+
+.collection-grid-view.ng-star-inserted {
+    height: 49px;
+}
+.product-top-filter{
+    height: 50px;
+}
+.row {
+    height: 50px;
+}
+.collection-view  {
+    height: 49px;
+    padding: 13px !important;
+}
+.search-count {
+    height: 49px;
+    padding: 13px !important;
+}
+.collection-grid-view {
+    height: 49px;
+    padding: 13px !important;
+}
+.product-wrapper-grid.list-view .product-box .img-wrapper, .product-wrapper-grid.list-view .product-box .img-block {
+    width: 90%;
+}

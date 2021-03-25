@@ -1,0 +1,121 @@
+<div class="icon-nav">
+  <ul>
+    <li class="onhover-div mobile-search search-widgets" id="search-widgets">
+      <div (click)="searchToggle()">
+        <!-- <input disabled class="red-border hideMobile" type="text" placeholder="Search a Product" aria-label="Search"> -->
+        <img src="assets/images/icon/search.png" class="img-fluid" alt="">
+        <i class="ti-search"></i>
+        <span class="red-border hideMobile">Search A Product</span>
+      </div>
+      <!-- <div class="input-group md-form form-sm form-2 pl-0"> -->
+        <!-- <form > -->
+          <!-- <div class="form-group"> -->
+        <!-- <input class="form-control my-0 py-1 red-border" type="text" [(ngModel)]="searchProductField" (keyup)="searchProduct($event)" placeholder="Search a Product" aria-label="Search">
+        <span class="input-group-append">
+          <span class="input-group-text" id="basic-text1">
+            <i class="fa fa-search"></i></span>
+        </span> -->
+      <!-- </div> -->
+        <!-- </form> -->
+        
+      <!-- </div> -->
+      <div id="search-overlay" class="search-overlay" [ngStyle]="{'display': search ? 'list-item' : 'none' }">
+        <div> 
+            <span class="closebtn" title="Close Overlay" (click)="searchToggle()">×</span>
+            <div class="overlay-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <form >
+                                <div class="form-group">
+                                    <input autocomplete="off" type="text" class="form-control" name="searchProductField" [(ngModel)]="searchProductField" (keyup)="searchProduct($event)" placeholder="Search a Product" >
+                                </div>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            </form>
+                            <div *ngIf="productResultsBoolean" class="container-list">
+                              <div *ngFor="let item of productResults">
+                              <!-- <a [routerLink]="['/shop/product/product-variants-listing/', item.id]" (click)="searchToggle()" class="list-group-item"><span><img style="width: 15%; height: 10%;" src="{{productUrl}}{{item.image}}"></span> <span class="list-text">{{item.name}}</span>
+                              </a> -->
+                              <ul class="list-group-item" [class.show]="show">
+                                <li class="li">
+                                  <a [routerLink]="['/shop/product/product-variants-listing/', item.id]">
+                                  <div class="media">
+                                    <img onerror="this.onerror=null;this.src='assets/images/noImage.png';" style="width: 10%; height: 10%;" src="{{productUrl}}{{item.image}}" alt="{{productUrl}}{{item.image}}">
+                                  <div class="media-body list-text">
+                                    <h4>{{item.name}}</h4>
+                                    <h5><span>₹ {{ item.price }}</span></h5>
+                                  </div>
+                                  </div></a>
+                                </li>
+                            </ul>
+                            </div>
+                            <!-- <button *ngIf="productResults" (click)="show = !show">{{ show ? 'Show less': 'Show More' }}</button> -->
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- <div *ngFor="let item of productResults" style="position: fixed;
+        display: block; ">
+          <a [routerLink]="['/shop/product/product-variants-listing/', item.id]" (click)="searchToggle()" class="list-group-item">
+          <span><img style="width: 25%;" src="{{productUrl}}{{item.image}}"></span> 
+            <span class="list-text">{{item.name}}</span>
+          <span class="list-text price">₹ {{item.price}}</span></a>
+        </div> -->
+    </li>
+    <li class="onhover-div mobile-cart">
+      <div>
+        <!-- [routerLink]="['/shop/cart']" -->
+        <a href="/shop/cart" data-toggle="modal" data-original-title="test"
+        data-target="#exampleModal">
+          <img src="assets/images/icon/cart.png" class="img-fluid" alt="">
+          <i class="ti-shopping-cart"></i>
+        </a>
+      </div>
+      <span class="cart_qty_cls">{{ displayCount.length }}</span>
+      <ul class="show-div shopping-cart" *ngIf='!displayCount.length'>
+        <h5>Your cart is currently empty.</h5>
+      </ul>
+      <ul class="show-div shopping-cart" *ngIf='displayCount.length'>
+        <li *ngFor="let product of displayCount">
+          <div class="media">
+            <!-- <a [routerLink]="['/shop/product/left/sidebar/', product?.productVariant.replace(' ', '-')]"> -->
+              <img class="mr-3" [src]="product?.productImage" onerror="this.onerror=null;this.src='assets/images/noImage.png';" [alt]="product?.productImage">
+            <!-- </a> -->
+            <div class="media-body">
+              <!-- <a [routerLink]="['/shop/product/left/sidebar/', product?.productVariant.replace(' ', '-')]"> -->
+                <h4>{{ product?.productVariant }}</h4>
+              <!-- </a> -->
+              <h4>
+                <span>
+                  {{ product?.quantity }} x 
+                  {{ product?.initialPrice }}
+                </span>
+              </h4>
+            </div>
+          </div>
+          <div class="close-circle" (click)="removeItem(product)">
+            <a href="javascript:void(0)"><i class="fa fa-times" aria-hidden="true"></i></a>
+          </div>
+        </li>
+        <li>
+          <div class="total">
+            <h5>subtotal : <span class="colorText">₹ {{ displayTotalAmount }}</span></h5>
+          </div>
+        </li>
+        <li>
+          <div class="buttons" style="text-align: center;">
+            <a href="/shop/cart" class="view-cart">view cart</a>
+            <!-- <a [routerLink]="['/shop/checkout']" class="checkout">checkout</a> -->
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="onhover-div hideMobile">
+      Shopping Cart<br>
+      <h5 class="colorText">₹ {{ displayTotalAmount }}</h5>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,88 @@
+ .align{
+    position: fixed;
+  }
+  @media (max-width: 500px){
+    .align{
+      position: initial; 
+    }
+  }
+  .round{
+    border-radius:30px 30px 30px 30px;
+  }
+.liStyle{
+  line-height: 2em !important;
+}
+.image{
+  width: 400px;
+    height: 100px;
+   margin-left: 30px;
+  }
+@media (max-width: 500px){
+.image{
+width: 300px;
+margin-left: 0px;}}
+
+.head{
+  font-weight: 100 !important;
+  text-transform: none !important;
+}
+.modal-footer{
+  justify-content: space-evenly !important;
+}
+.payment{
+  color: #444444;
+  font-weight: 600;
+  font-size: 22px;
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 20px;
+  padding-bottom: 25px;
+}
+.space {
+  margin-bottom : 0px !important;
+}
+.checkout-page .checkout-title {
+  margin: 25px 0px !important;
+}
+.space ul{
+  border-bottom: 0px;
+}
+#right-panel {
+  font-family: "Roboto", "sans-serif";
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+#right-panel select,
+#right-panel input {
+  font-size: 15px;
+}
+
+#right-panel select {
+  width: 100%;
+}
+
+#right-panel i {
+  font-size: 12px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  height: 100%;
+  width: 50%;
+}
+
+#right-panel {
+  float: right;
+  width: 48%;
+  padding-left: 2%;
+}
+
+#output {
+  font-size: 11px;
+}

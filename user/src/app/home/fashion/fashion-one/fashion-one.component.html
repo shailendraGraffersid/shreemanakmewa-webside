@@ -1,0 +1,121 @@
+<app-header-one [sticky]="true"></app-header-one>
+
+<!-- Home slider start-->
+<section class="p-0">
+  <app-slider 
+    [sliders]="sliders" 
+  > 
+  </app-slider>
+</section>
+<!-- Home slider End -->
+
+
+<!-- Product slider start-->
+<div class="title1 section-t-space">
+  <h2 class="title-inner1">The Dry Fruits People</h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="product-para">
+        <p class="text-center">
+          Indulge yourself by the Richness of Nature's Ingredients
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="section-b-space p-t-0">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="vc_row wpb_row vc_row-fluid vc_custom_1548150614902"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="tbay-addon tbay-addon-grid tbay-addon-categories categories ">
+      
+    <div class="tbay-addon-content woocommerce">
+    <div class="grid-wrapper">
+                  <div class="row grid" data-xlgdesktop="5" data-desktop="5" data-desktopsmall="4" data-tablet="4" data-landscape="3" data-mobile="2">
+    <div class="item" *ngFor="let product of products">
+             <div class="item-cat tbay-image-loaded cat-icon">
+      <a [routerLink]="['/shop/products-listing/', product.id]"><img src="{{categoryUrl}}{{product.image}}" class="" alt="{{product.name}}" width="300" height="300"></a>
+
+      <div class="content">
+        <a [routerLink]="['/shop/products-listing/', product.id]" class="cat-name">{{product.name}}</a>
+         </div>
+</div>
+    </div>
+           
+
+                  </div>
+</div>
+  </div>
+</div>
+</div></div></div></div>
+        <!-- <owl-carousel-o class="product-m no-arrow" [options]="ProductSliderConfig">
+          <ng-container *ngFor="let product of products">
+            <ng-template carouselSlide>
+              <div class="product-box">
+                <app-home-listing 
+                  [product]="product" 
+                  [currency]="productService?.Currency"
+                  [thumbnail]="true"
+                  [cartModal]="true">
+                </app-home-listing>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o> -->
+        <!-- <app-grid 
+        [products]="products"
+        [layoutView]="layoutView"
+        [sortBy]="sortBy"
+        (setGrid)="updateGridLayout($event)"
+        (setLayout)="updateLayoutView($event)"
+        (sortedBy)="sortByFilter($event)">
+    </app-grid> -->
+        <!-- <div class="product-wrapper-grid" [ngClass]="layoutView">
+          <div class="row">
+              <div class="col-grid-box"
+                  [ngClass]="grid"
+                  *ngFor="let product of products">
+                  <div class="product-box">
+                      <app-product-box-one 
+                          [product]="product" 
+                          [currency]="productService?.Currency"
+                          [thumbnail]="false"
+                          [cartModal]="true"
+                          [loader]="true">
+                      </app-product-box-one>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Product slider End -->
+
+<!-- services start-->
+<!-- <div class="container">
+  <section class="service border-section small-section">
+    <app-services></app-services>
+  </section>
+</div> -->
+<!-- services End -->
+
+<!-- Instagram section -->
+<section class="instagram">
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-md-12 p-0">
+        <h2 class="title-borderless"><a href="https://www.instagram.com/thedryfruitspeople/?hl=en"># instagram</a></h2>
+        <!-- <app-instagram></app-instagram> -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Instagram section End -->
+
+<!-- <app-newsletter></app-newsletter> -->
+<app-footer-one></app-footer-one>
+

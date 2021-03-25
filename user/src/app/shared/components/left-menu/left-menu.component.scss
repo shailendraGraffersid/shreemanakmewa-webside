@@ -1,0 +1,11 @@
+i {
+    color: white;
+}
+i.fa.fa-bars.sidebar-bar {
+    color: white;
+}
+@media (max-width: 500px){
+    i.fa.fa-bars.sidebar-bar {
+        color: #ca0815 !important;
+    }
+}

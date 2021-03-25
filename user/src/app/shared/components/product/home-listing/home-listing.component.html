@@ -1,0 +1,30 @@
+<div *ngIf="!loader">
+  <div class="img-wrapper">
+    <div class="lable-block">
+      <span class="lable3" *ngIf="product.new">new</span>
+      <span class="lable4" *ngIf="product.sale">on sale</span>
+    </div>
+    <div class="front">
+      <a [routerLink]="['/shop/products-listing/', product.id]" [state]="{ home: true }">
+        <img 
+          [defaultImage]="'assets/images/product/placeholder.jpg'" 
+          [lazyLoad]="url" 
+          class="img-fluid lazy-loading" 
+          [alt]="url" />
+      </a>
+    </div>
+    <div class="back" *ngIf="onHowerChangeImage">
+      <a [routerLink]="['/shop/products-listing/', product.id]">
+        <img [src]="url" class="img-fluid lazy-loading" alt="'assets/images/product/placeholder.jpg'">
+      </a>
+    </div>
+  </div>
+  <div class="product-detail">
+    <div>
+      <bar-rating [rate]="4" [readOnly]="true"></bar-rating>
+      <a [routerLink]="['/shop/products-listing/', product.id]">
+        <h6>{{ product?.name | titlecase }}</h6>
+      </a>
+    </div>
+  </div>
+</div>

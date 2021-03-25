@@ -1,0 +1,38 @@
+  .counter-wrapper {
+    width: 80%;
+    height: 10%;
+    display: inline-flex;
+    background-color: #f8f9fa;
+    font-size: 1.25rem;
+    justify-content: center;
+     margin-top: 0.5%;
+     margin-left: 10%;
+  }
+
+  .align{
+    position: fixed;
+  }
+  @media (max-width: 500px){
+    .align{
+      position: initial; 
+    }
+  }
+  .round{
+    border-radius:30px 30px 30px 30px;
+  }
+
+  .counter {
+    background-color: #f8f9fa;
+    font-size: 1.30rem;
+  }
+
+  @media (max-width:499px){.cart-section tfoot tr td:first-child, .wishlist-section tfoot tr td:first-child {
+    width: 70%;
+  }
+  .btn {
+   padding: 0px;
+  }
+  .qty-box .input-group button{
+    padding-left: 0px;
+  }
+  }

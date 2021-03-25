@@ -1,0 +1,73 @@
+<!-- <app-breadcrumb [title]="'Register'" [breadcrumb]="'Register'"></app-breadcrumb> -->
+<!-- section start -->
+<section class="register-page section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>create account</h3>
+                <div class="theme-card">
+                    <form class="theme-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="email">First Name</label>
+                                <input type="text" class="form-control" formControlName="firstname" id="fname" placeholder="First Name">
+                                <div *ngIf="isSubmit && get?.firstname?.errors?.required" class="text text-danger">
+                                    First Name is required.
+                                </div>
+                                <div *ngIf="isSubmit && get?.firstname.errors?.pattern" class="text text-danger">
+                                    First Name must be an alphabates.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">Last Name</label>
+                                <input type="text" formControlName="lastname" class="form-control" id="lname" placeholder="Last Name">
+                                <div *ngIf="isSubmit && get?.lastname?.errors?.required" class="text text-danger">
+                                    Last Name is required.
+                                </div>
+                                <div *ngIf="isSubmit && get?.lastname.errors?.pattern" class="text text-danger">
+                                    Last Name must be an alphabates.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="email">email</label>
+                                <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email">
+                                <div *ngIf="isSubmit && get?.email?.errors?.required" class="text text-danger">
+                                    Email is required.
+                                </div>
+                                <div *ngIf="isSubmit && get?.email?.errors?.email" class="text text-danger">
+                                    Invalid Email
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">Username</label>
+                                <input type="text" formControlName="username" class="form-control" id="review" placeholder="Username">
+                                <div *ngIf="isSubmit && get?.username?.errors?.required" class="text text-danger">
+                                    Username is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="review">Password</label>
+                                <input type="password" formControlName="password" class="form-control" id="review" placeholder="Enter your password">
+                                <div *ngIf="isSubmit && get?.password?.errors?.required" class="text text-danger">
+                                    Password is required.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">Confirm Password</label>
+                                <input type="password" formControlName="cpassword" class="form-control" id="review" placeholder="Password should be same">
+                                <div *ngIf="isSubmit && !get?.cpassword?.errors?.required && registerForm.errors?.mismatch" class="text text-danger">Password and confirm password are mismatch.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-solid">Create Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Section ends-->

@@ -1,0 +1,17 @@
+bar-rating {
+    visibility: hidden;
+}
+h6 {
+    text-align: center;
+}
+img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px){
+    .front{height: 200px;
+        overflow: hidden;
+        width: 250px;
+        margin-left: 40px;}}

@@ -1,0 +1,32 @@
+@media (min-width: 1200px){.mobileMenu{
+    visibility: hidden;
+}}
+.second{
+    height: 50px;
+}
+header .main-navbar{
+    text-align: right !important;
+}
+@media(max-width:500px){.mobileLogo{
+    height: 65px;
+}}
+.top-header {
+    background-color: #ca0815;
+}
+.top-header .header-contact li {
+    color: white;
+}
+.top-header .header-dropdown li {
+    cursor: pointer;
+    color: white;
+    padding: 0px;
+}
+.top-header .header-contact {
+    padding: 0px; 
+    margin-top: 10px;
+}
+@media (min-width: 1200px)
+{.container-second, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1700px;
+    margin-left: 45px;
+}}

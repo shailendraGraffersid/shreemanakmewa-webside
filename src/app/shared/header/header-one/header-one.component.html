@@ -1,0 +1,74 @@
+<header class="sticky" [ngClass]="class" [class.fixed]="stick && sticky">
+  <div class="mobile-fix-option"></div>
+  <div class="container">
+    <div class="row mobileLogo">
+      <div class="col-sm-12">
+        <div class="main-menu">
+          <div class="menu-left">
+            <!-- <div class="mobileMenu"> -->
+              <!-- <app-left-menu></app-left-menu> -->
+            <!-- </div> -->
+            <div class="brand-logo">
+              <a routerLink="/home/categories" id="headerlogo">
+                <img [src]="themeLogo" class="img-fluid" alt="logo">
+              </a>
+            </div>
+          </div>
+          <div class="menu-right pull-right">
+            <!-- <div>
+              <app-menu></app-menu>
+            </div> -->
+            <div>
+              <app-settings></app-settings>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="top-header">
+    <div class="container">
+      <!-- <div class="row"> -->
+        <!-- <div class="col-md-3 col-lg-1"> -->
+          <!-- <div class="menu-left">
+            <app-left-menu></app-left-menu>
+          </div> -->
+        <!-- </div> -->
+        <!-- <div class="menu-right pull-right">
+          <ul class="header-dropdown">
+              <app-menu></app-menu> -->
+            <!-- <li class="onhover-dropdown mobile-account">
+              <i class="fa fa-user" aria-hidden="true"></i> My Account
+              <ul class="onhover-show-div">
+                <li>
+                  <a data-lng="en">
+                    Login
+                  </a>
+                </li>
+                <li>
+                  <a data-lng="es">
+                    Logout
+                  </a>
+                </li>
+              </ul>
+            </li> -->
+          <!-- </ul>
+        </div>
+      </div> -->
+      <div class="row second">
+        <div class="col-sm-12 second">
+          <div class="main-menu second">
+            <div class="menu-left">
+                <app-left-menu></app-left-menu>
+            </div>
+            <div class="menu-right pull-right">
+          <ul class="header-dropdown">
+                <app-menu></app-menu>
+          </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

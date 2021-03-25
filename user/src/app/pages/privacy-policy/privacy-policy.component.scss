@@ -1,0 +1,30 @@
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+h3 {
+    line-height: 1.8;
+    margin: 11px 0px;
+    letter-spacing: 0.09em;
+    color: black;
+    font-weight: 600;
+}
+.row{
+    color: #777777;
+}
+p, ul {
+    line-height: 1.8;
+    margin-bottom: -4px;
+    letter-spacing: 0.09em;
+}
+li {
+    display: list-item;
+    line-height: 1.8;
+    margin-bottom: -4px;
+    letter-spacing: 0.09em;
+}

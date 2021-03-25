@@ -1,0 +1,23 @@
+bar-rating {
+    visibility: hidden;
+}
+h6, h5 {
+    text-align: center;
+}
+h5 {
+    color: #ca0815;
+}
+img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.front{
+    height: 200px;
+overflow: hidden;
+}
+
+@media (max-width:499px){.front{height: 100px; overflow: hidden; 
+    // margin: 0px 5px 0px 45px; width: 250px;
+}}

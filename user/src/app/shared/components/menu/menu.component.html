@@ -1,0 +1,83 @@
+<div class="main-navbar">
+  <div id="mainnav">
+    <div class="toggle-nav" (click)="mainMenuToggle()">
+      <i class="fa fa-bars sidebar-bar"></i>
+    </div>
+    <ul class="nav-menu" [class.opennav]="navServices?.mainMenuToggle">
+      <li class="back-btn">
+        <div class="mobile-back text-right" (click)="mainMenuToggle()">
+          <span>Back</span>
+          <i class="fa fa-angle-right pl-2" aria-hidden="true"></i>
+        </div>
+      </li>
+
+      <li *ngFor="let menuItem of menuItems" [class.mega-menu]="menuItem.megaMenu">
+        <!-- Sub -->
+        <a href="javascript:void(0)" class="nav-link" *ngIf="menuItem.type === 'sub'" 
+            (click)="toggletNavActive(menuItem)">
+          {{ menuItem.title | translate }}
+          <div class="lable-nav" *ngIf="menuItem.badge">{{ menuItem.badgeText | translate }}</div>
+          <span class="sub-arrow" *ngIf="menuItem.children"></span>
+        </a>
+        <!-- Link -->
+        <a [routerLink]="menuItem.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link"
+          *ngIf="menuItem.type === 'link' && menuItem.title != 'diwali 2021'">
+          {{ menuItem.title }} 
+          <div class="lable-nav" *ngIf="menuItem.badge">{{ menuItem.badgeText | translate }}</div>
+          <span class="sub-arrow" *ngIf="menuItem.children"></span>
+        </a>
+        <!-- href="{{environment}}/assets/Manak-Mewa_Diwali_Gift_Catalogue_2020.pdf" -->
+        <a (click)="openPdf()" class="nav-link" *ngIf="menuItem.title == 'diwali 2021'">{{ menuItem.title }}</a>
+
+        <!-- External Link -->
+        <a href="{{ menuItem.path }}" class="nav-link" *ngIf="menuItem.type === 'extLink'">
+          {{ menuItem.title }}
+          <div class="lable-nav" *ngIf="menuItem.badge">{{ menuItem.badgeText | translate }}</div>
+          <span class="sub-arrow" *ngIf="menuItem.children"></span>
+        </a>
+        <!-- External Tab Link -->
+        <a href="{{ menuItem.path }}" class="nav-link" *ngIf="menuItem.type === 'extTabLink'">
+          {{ menuItem.title }}
+          <div class="lable-nav" *ngIf="menuItem.badge">{{ menuItem.badgeText | translate }}</div>
+          <span class="sub-arrow" *ngIf="menuItem.children"></span>
+        </a>
+
+        <!-- 2nd Level Menu -->
+        <ul class="nav-submenu" [class.opensubmenu]="menuItem.active" *ngIf="menuItem.children">
+          <li *ngFor="let childrenItem of menuItem.children">
+            <!-- Sub -->
+            <a href="javascript:void(0)" *ngIf="childrenItem.type === 'sub'" 
+                (click)="toggletNavActive(childrenItem)">
+              {{ childrenItem.title | translate }}
+              <span class="new-tag" *ngIf="childrenItem.badge">{{ childrenItem.badgeText | translate }}</span>
+              <span class="sub-arrow" *ngIf="childrenItem.children"></span>
+            </a>
+            <!-- Link -->
+            <a [routerLink]="['/shop/products-listing/', childrenItem.path]" [state]="{ home: true }"
+              *ngIf="childrenItem.type === 'link' ">
+              {{ childrenItem.title | translate }}
+              <span class="new-tag" *ngIf="childrenItem.badge">{{ childrenItem.badgeText | translate }}</span>
+              <span class="sub-arrow" *ngIf="childrenItem.children"></span>
+            </a>
+            <!-- External Link -->
+            <!-- <a href="{{ childrenItem.path }}"
+              *ngIf="childrenItem.type === 'extLink' ">
+              {{ childrenItem.title | translate }}
+              <span class="new-tag" *ngIf="childrenItem.badge">{{ childrenItem.badgeText | translate }}</span>
+              <span class="sub-arrow" *ngIf="childrenItem.children"></span>
+            </a> -->
+            <!-- External Tab Link -->
+            <!-- <a href="{{ childrenItem.path }}" target="_blank"
+              *ngIf="childrenItem.type === 'extTabLink' ">
+              {{ childrenItem.title | translate }}
+              <span class="new-tag" *ngIf="childrenItem.badge">{{ childrenItem.badgeText | translate }}</span>
+              <span class="sub-arrow" *ngIf="childrenItem.children"></span>
+            </a> -->
+
+          </li>
+        </ul>
+
+      </li>
+    </ul>
+  </div>
+</div>
